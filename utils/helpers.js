@@ -1,22 +1,31 @@
-module.exports = {
-  format_date: (date) => {
-    // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
-  },
-  format_amount: (amount) => {
-    // format large numbers with commas
-    return parseInt(amount).toLocaleString();
-  },
-  get_emoji: () => {
-    const randomNum = Math.random();
+// Import required modules
+const moment = require('moment');
 
-    // Return a random emoji
-    if (randomNum > 0.7) {
-      return `<span for="img" aria-label="lightbulb">💡</span>`;
-    } else if (randomNum > 0.4) {
-      return `<span for="img" aria-label="laptop">💻</span>`;
+// Define custom helpers
+const helpers = {
+  // Format date using moment.js
+  formatDate: (date) => {
+    return moment(date).format('MMMM DD, YYYY');
+  },
+
+  // Truncate text to a specific length
+  truncateText: (text, length) => {
+    if (text.length > length) {
+      return text.substring(0, length) + '...';
     } else {
-      return `<span for="img" aria-label="gear">⚙️</span>`;
+      return text;
     }
   },
+
+  // Format comments count
+  formatCommentsCount: (count) => {
+    return count === 1 ? '1 Comment' : count + ' Comments';
+  },
+
+  // Check if user is logged in
+  isLoggedIn: (user) => {
+    return user ? true : false;
+  }
 };
+
+module.exports = helpers;

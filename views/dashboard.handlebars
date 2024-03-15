@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog - Dashboard</title>
+</head>
+
+<body>
+    <h1>Dashboard</h1>
+    <h2>Your Blog Posts</h2>
+    {{#if userPosts}}
+    <ul>
+        {{#each userPosts}}
+        <li>
+            <h3>{{title}}</h3>
+            <p>{{content}}</p>
+            <form action="/post/{{id}}?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+            <form action="/post/{{id}}/edit" method="GET">
+                <button type="submit">Edit</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p>No posts yet. <a href="/">Create one now!</a></p>
+    {{/if}}
+    <h2>Create a New Blog Post</h2>
+    <form action="/post" method="POST">
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" required><br>
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>
