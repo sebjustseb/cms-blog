@@ -1,14 +1,17 @@
 [
   {
-    "title": "Post 1",
-    "content": "First post"
+    "title": "My First Blog Post",
+    "content": "This is the content of my first blog post. I'm excited to start blogging!",
+    "user_id": 1
   },
   {
-    "title": "Post 2",
-    "content": "Second post"
+    "title": "Top 5 Favorite Books",
+    "content": "Here are my top 5 favorite books of all time: 1. The Great Gatsby by F. Scott Fitzgerald, 2. To Kill a Mockingbird by Harper Lee, 3...",
+    "user_id": 2
   },
   {
-    "title": "Post 3",
-    "content": "Third post"
+    "title": "Why I Love Coding",
+    "content": "Coding has been a passion of mine ever since I wrote my first 'Hello, World!' program. There's something incredibly satisfying about...",
+    "user_id": 3
   }
 ]
