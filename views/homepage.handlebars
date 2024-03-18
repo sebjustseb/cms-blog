@@ -1,0 +1,9 @@
+{{#each posts as |post|}}
+  {{> post-info post}}
+  {{#if post.comments}}
+    <h3>Comments:</h3>
+    {{#each post.comments as |comment|}}
+      {{> comment comment}}
+    {{/each}}
+  {{/if}}
+{{/each}}

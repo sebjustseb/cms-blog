@@ -1,41 +1,42 @@
-// Import Sequelize and database connection
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Define Post model
 class Post extends Model {}
 
-// Define Post model fields
 Post.init(
   {
-    // Define columns
     id: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     content: {
       type: DataTypes.TEXT,
-      allowNull: false
-    },
-    userId: {
-      type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id'
-      }
-    }
+        key: 'id',
+      },
+    },
+    date_created: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
   },
   {
     sequelize,
-    timestamps: true,
+    freezeTableName: true,
     underscored: true,
-    modelName: 'Post'
+    modelName: 'post',
   }
 );
 

@@ -1,0 +1,17 @@
+[
+    {
+      "comment_text": "Great post! I enjoyed reading your thoughts.",
+      "user_id": 2,
+      "post_id": 1
+    },
+    {
+      "comment_text": "I love To Kill a Mockingbird too! It's such a classic.",
+      "user_id": 3,
+      "post_id": 2
+    },
+    {
+      "comment_text": "Coding is definitely an art form. Keep up the great work!",
+      "user_id": 1,
+      "post_id": 3
+    }
+  ]

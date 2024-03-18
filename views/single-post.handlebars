@@ -1,0 +1,17 @@
+{{> post-info post}}
+{{#if comments}}
+  <h3>Comments:</h3>
+  {{#each comments as |comment|}}
+    {{> comment comment}}
+  {{/each}}
+{{/if}}
+{{#if loggedIn}}
+  <h3>Add a Comment:</h3>
+  <form id="new-comment-form">
+    <div>
+      <label for="comment-text">Comment:</label>
+      <textarea id="comment-text" name="comment-text" required></textarea>
+    </div>
+    <button type="submit">Submit Comment</button>
+  </form>
+{{/if}}
