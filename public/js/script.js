@@ -12,7 +12,7 @@ const handlePostFormSubmit = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard'); // Redirect to the dashboard after creating a post
+      document.location.replace('../views/dashboard'); // Redirect to the dashboard after creating a post
     } else {
       alert('Failed to create a new post');
     }
